@@ -5,6 +5,7 @@ const PromptSchema = new Schema({
     creator: {
         type: Schema.Types.ObjectId,
         ref: 'User',
+        required: [true, 'Post creator is required!']
     }, 
     prompt: {
         type: String,
@@ -17,3 +18,5 @@ const PromptSchema = new Schema({
 })
 
 const Prompt = models.Prompt || model('Prompt', PromptSchema);
+
+export default Prompt;
